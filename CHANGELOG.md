@@ -1,3 +1,17 @@
+# 0.2.2
+
+## Web
+
+### Websites
+- **Joining with an existing sign-in**: when the e-mail address is already used with another service provider, the signed-in order widget asks for the details this client needs and then signs the person in with the same e-mail address and password; an account that waits for approval says so.
+- **Trusted browser**: the confirmation code step offers "Do not ask for a code on this browser for 30 days"; the next sign-in with the same address on that browser skips the code.
+- **Missing registration details**: an account whose registration details are incomplete fills them in inside the widget before the order form opens, and again whenever an order call is refused for them.
+
+## Apps
+
+### All packages
+- **Version**: every package is released as 0.2.2 with the web runtime; nothing else changes in the native, React, React Native and Flutter packages.
+
 # 0.2.1
 
 ## Web
