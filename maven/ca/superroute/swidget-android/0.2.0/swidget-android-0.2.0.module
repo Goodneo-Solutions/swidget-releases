@@ -1,0 +1,170 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "ca.superroute",
+    "module": "swidget-android",
+    "version": "0.2.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.14.3"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseVariantReleaseApiPublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "ca.superroute",
+          "module": "sapp-ui-android",
+          "version": {
+            "requires": "0.2.5"
+          }
+        },
+        {
+          "group": "ca.superroute",
+          "module": "slocker-ui-android",
+          "version": {
+            "requires": "0.2.1"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2025.10.01"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "swidget-android-0.2.0.aar",
+          "url": "swidget-android-0.2.0.aar",
+          "size": 121611,
+          "sha512": "cd2fedd6b29cc8d8fff6e4ee0d8fa1722ea7bdc87083429682bb1a44154062b5b3538de13d7e587108424d445cd92e635d2f8f82ed02efb794841ea76f7dd354",
+          "sha256": "32b4af248d762f75e6c66652e98091833db1a258797d376fccf0e0d5c59ab7a1",
+          "sha1": "9c42bbb304c746064c888802ed324f8db633cab7",
+          "md5": "b68ca5cc48921c207ad7e7061a77dd1d"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseRuntimePublication",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.libraryelements": "aar",
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.compose.foundation",
+          "module": "foundation"
+        },
+        {
+          "group": "androidx.compose.material3",
+          "module": "material3"
+        },
+        {
+          "group": "ca.superroute",
+          "module": "sapp-ui-android",
+          "version": {
+            "requires": "0.2.5"
+          }
+        },
+        {
+          "group": "ca.superroute",
+          "module": "slocker-ui-android",
+          "version": {
+            "requires": "0.2.1"
+          }
+        },
+        {
+          "group": "androidx.compose",
+          "module": "compose-bom",
+          "version": {
+            "requires": "2025.10.01"
+          },
+          "attributes": {
+            "org.gradle.category": "platform"
+          },
+          "endorseStrictVersions": true
+        },
+        {
+          "group": "androidx.compose.runtime",
+          "module": "runtime"
+        },
+        {
+          "group": "androidx.compose.ui",
+          "module": "ui"
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "swidget-android-0.2.0.aar",
+          "url": "swidget-android-0.2.0.aar",
+          "size": 121611,
+          "sha512": "cd2fedd6b29cc8d8fff6e4ee0d8fa1722ea7bdc87083429682bb1a44154062b5b3538de13d7e587108424d445cd92e635d2f8f82ed02efb794841ea76f7dd354",
+          "sha256": "32b4af248d762f75e6c66652e98091833db1a258797d376fccf0e0d5c59ab7a1",
+          "sha1": "9c42bbb304c746064c888802ed324f8db633cab7",
+          "md5": "b68ca5cc48921c207ad7e7061a77dd1d"
+        }
+      ]
+    },
+    {
+      "name": "releaseVariantReleaseSourcePublication",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.usage": "java-runtime"
+      },
+      "files": [
+        {
+          "name": "swidget-android-0.2.0-sources.jar",
+          "url": "swidget-android-0.2.0-sources.jar",
+          "size": 18176,
+          "sha512": "d95976e5a37e01162d15910626d7b64fc8f4f944b32f7080e54205dfb774a11f3cc4ef38dc5bdd7e1adc9ffac96c8c32ce139561cf9f12737ad64df2f49552e1",
+          "sha256": "9869640821837c27d1d762f60f7681f6afd4a7aff9284ce3b10aca725353f596",
+          "sha1": "bc6f4deebef6b85ded2c6a280f68e2edeb8a1e1c",
+          "md5": "c72d4e4447e4368da2e0e08bbaa0d947"
+        }
+      ]
+    }
+  ]
+}

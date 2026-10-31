@@ -1,0 +1,37 @@
+# Written by sWidget's release workflow (its tools/release/releases-repo); edit it there.
+#
+# sWidget's release workflow pushes the release commit (Package.swift, the Maven repository, the web files) to main and
+# then the release assets to the branch upload/<version>, with release.json: the version and the main commit. This
+# turns that branch into the GitHub Release <version> on that commit — which creates the tag the Swift package is
+# resolved by — with the SWidget XCFramework and the web files as its assets, and deletes the branch: the deploy key
+# that pushes can push but cannot create releases.
+name: publish release
+
+on:
+  push:
+    branches: ['upload/**']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          version=$(jq -r .version release.json)
+          target=$(jq -r .target release.json)
+          [ "upload/$version" = "$GITHUB_REF_NAME" ] || { echo "branch $GITHUB_REF_NAME does not match $version"; exit 1; }
+          assets=(*.xcframework.zip swidget.js swidget.esm.js SHA256SUMS)
+          if gh release view "$version" >/dev/null 2>&1; then
+            gh release upload "$version" "${assets[@]}" --clobber
+          else
+            gh release create "$version" "${assets[@]}" --target "$target" --title "sWidget $version" \
+              --notes "sWidget $version: SWidget for iOS and macOS over sApp and sLocker, ca.superroute:swidget-android in the Maven repository, and the web files (swidget.js, swidget.esm.js, SHA256SUMS). Documentation: https://open.superroute.ca/developer/swidget"
+          fi
+      - name: Delete the upload branch
+        run: git push origin --delete "$GITHUB_REF_NAME"
