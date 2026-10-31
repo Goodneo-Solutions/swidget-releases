@@ -1,3 +1,20 @@
+# 0.2.1
+
+## Web
+
+### Websites
+- **Superroute's own API host**: website widgets now call the client's Superroute API host. New snippets name the app (`data-app="swidget"`) and the API host (`data-api`); `mount()`, `SWidget.web()` and `<sr-swidget>` take the same settings.
+- **Pasted snippets switch by themselves**: a snippet pasted before 0.2.1 reads its configuration once where it did before and then makes every later call on the API host. Nobody has to paste a snippet again.
+- **Sign-in inside the widget**: the signed-in order widget shows its own e-mail and password form instead of a sign-in window, asks for the confirmation code when the account uses two-step verification, and can send the code again.
+- **Registration inside the widget**: when the client takes sign-ups, a visitor without an account creates one with a code sent to their e-mail address and is then signed in; an account that waits for approval says so.
+- **Forgot password**: a link to the client's password reset page, opened in a new tab.
+- **New refusal**: `registration_disabled` when the client does not take sign-ups through the widget.
+
+## Apps
+
+### All packages
+- **Version**: every package is released as 0.2.1 with the web runtime; nothing else changes in the native, React, React Native and Flutter packages.
+
 # 0.2.0
 
 ## Web

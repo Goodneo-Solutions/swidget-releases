@@ -17,8 +17,8 @@ let package = Package(
     targets: [
         .binaryTarget(
             name: "SWidget",
-            url: "https://github.com/Goodneo-Solutions/swidget-releases/releases/download/0.2.0/SWidget.xcframework.zip",
-            checksum: "78fa2d5a3a11dae2973a0c6d935234a61eff53ed2c9c01b8dc50acfee8c4a185"
+            url: "https://github.com/Goodneo-Solutions/swidget-releases/releases/download/0.2.1/SWidget.xcframework.zip",
+            checksum: "baa8920f723c2a04961313c33d2007909a9452b70e2e3eddfc588bfb92300b1f"
         ),
         // A binary target cannot name dependencies: this empty target brings the kits into the product.
         .target(

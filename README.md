@@ -41,8 +41,14 @@ on the websites listed on the widget.
 ```html
 <div id="swidget-abc123def456"></div>
 <script src="https://admin.example.com/swidget/swidget.js" data-swidget="abc123def456"
-        data-key="sp_appkey_…" data-client="k3m9q2" data-api="https://open.superroute.ca" async></script>
+        data-key="<widget key>" data-client="k3m9q2" data-app="swidget" data-api="https://api.superroute.ca" async></script>
 ```
+
+The widget runs on Superroute's own API host (`data-api`, the client's own API host or `https://api.superroute.ca`) as
+the app `swidget` (`data-app`). Snippets pasted before 0.2.1 (no `data-app`, `data-api` on the open host) keep working:
+their first call reads the configuration on the open host, and its answer moves every later call to the API host. A
+signed-in order widget shows its own e-mail and password sign-in (with a code step when the account asks for one),
+"Create an account" when the client takes sign-ups, and "Forgot password" when the client has a reset page.
 
 Pages that draw widgets themselves use the ES module or `window.sWidget`:
 
@@ -50,7 +56,7 @@ Pages that draw widgets themselves use the ES module or `window.sWidget`:
 import { mount, on, defineWidgetElements } from '@superrouteca/swidget';
 
 defineWidgetElements();
-await mount('#checkout-pickup', { widget: 'abc123def456', key: 'sp_appkey_…', client: 'k3m9q2', inputName: 'pickup_point' });
+await mount('#checkout-pickup', { widget: 'abc123def456', key: '<widget key>', client: 'k3m9q2', app: 'swidget', api: 'https://api.superroute.ca', inputName: 'pickup_point' });
 on('select', ({ pickup_point }) => console.log(pickup_point.id));
 ```
 
@@ -149,7 +155,7 @@ tools/release/build-web.sh out/                    # the release files with thei
 
 ### Native packages
 
-sWidget 0.2.0 is built on sApp 0.2.5 (`GuestQuote`, `GuestShippingOrder`) and sLocker 0.2.1 (the locker map's pickup
+sWidget 0.2.1 is built on sApp 0.2.5 (`GuestQuote`, `GuestShippingOrder`) and sLocker 0.2.1 (the locker map's pickup
 point source), from their public releases: Swift from `sapp-releases` and `slocker-customer-releases`, Kotlin from the
 sApp and sLocker Maven repositories, .NET from nuget.org.
 
