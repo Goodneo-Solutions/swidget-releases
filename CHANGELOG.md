@@ -1,3 +1,21 @@
+# 0.2.6
+
+0.2.5 was tagged but never published (its release stopped at the version check); 0.2.6 is that release.
+
+## Web
+
+### Websites
+- **Each tax on its own line**: the quote widget shows every tax of a price with its name and rate, the seller's tax number and its amount, instead of one tax figure; a price without a tax breakdown still shows the single tax.
+- **Tax lines in the quoted event**: `swidget:quoted` gives the quote's `tax_lines` (name, rate, tax number, amount); the list is empty when the price has no tax breakdown. Every other field of the event is unchanged.
+
+## Apps
+
+### All packages
+- **Tax lines in the quoted event**: the quoted event of the native, React, React Native and Flutter packages gives the quote's `tax_lines` the same way, with typed access to them; every package is released as 0.2.6.
+
+### Flutter
+- **sApp 0.2.6**: the Flutter package's theme gives the colour overrides sApp 0.2.6 added, so it builds with sApp 0.2.5 and 0.2.6.
+
 # 0.2.2
 
 ## Web
