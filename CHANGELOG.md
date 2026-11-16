@@ -1,3 +1,18 @@
+# 0.2.7
+
+## Apps
+
+### Flutter
+- **On pub.dev**: the Flutter package is published as 0.2.7 with the tax lines of 0.2.6 (0.2.6 reached every other registry; its Flutter package was stopped by a check of Flutter 3.47). It builds on older and newer Flutter.
+
+### All packages
+- **Version**: every other package is released as 0.2.7 too, with nothing changed since 0.2.6.
+
+## Web
+
+### Websites
+- **Version**: the web runtime is 0.2.7, unchanged since 0.2.6.
+
 # 0.2.6
 
 0.2.5 was tagged but never published (its release stopped at the version check); 0.2.6 is that release.
